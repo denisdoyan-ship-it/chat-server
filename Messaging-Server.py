@@ -68,8 +68,8 @@ class Handler(BaseHTTPRequestHandler):
                 write_data(data)
 
                 self.set_headers(201)
-                self.wfile.write(json.dumps(new_entry, ensure_ascii=False).encode('utf-8'))
-
+                self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
+                
             except Exception as e:
                 self.set_headers(500)
                 self.wfile.write(f'{{"error": "Server error: {str(e)}"}}'.encode('utf-8'))
