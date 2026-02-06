@@ -78,5 +78,4 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     server = HTTPServer(('0.0.0.0', port), Handler)
     print(f"Server starting on port {port}...")
-    print("http://172.20.128.1:5000/data")
     server.serve_forever()
